@@ -1,0 +1,47 @@
+We need to some changes in my psychopy code. We will change just the necessary to acomplish these changes. We will keep the code organize and in blocks.
+
+1- the questions that will be presented wil come from  "C:\Users\thiago-ext\Documents\FNIRS\psychopy\filtered_questions.json" which have entries like this:  {
+    "year": "2018",
+    "color": "azul",
+    "question_number": 33,
+    "field": "LC",
+    "question_text_translated": "Liesel Meminger's story is told by a morbid, surprisingly sympathetic narrator. Upon realizing that the little book thief has escaped him, Death becomes fond of the girl and tracks her footsteps from 1939 to 1943. Traits of a survivor: the communist mother, persecuted by Nazism, sends Liesel and her brother to the poor suburb of a German city, where a couple is willing to adopt them for money. The boy dies on the way and is buried by a gravedigger who drops a book in the snow. It is the first in a series that the girl will steal over the years. The only bond\nwith her family is this work, which she still doesn't know how to read. The surrounding life is the pseudo-reality created around the cult of Hitler in World War II. She watches the neighborhood's euphoric celebration of the Führer's birthday. Death, perplexed by human violence, gives a light and fun tone to the narrative of this harsh confrontation between lost childhood and the cruelty of the adult world, an absolute – and rare – success with critics and the public.",
+    "question_itself_translated": "Textual genres can be characterized, among other factors, by their objectives. This fragment is a",
+    "question_option_A_translated": "reporting, as it seeks to convince the interlocutor of the thesis defended throughout the text.",
+    "question_option_B_translated": "summary, as it promotes quick contact for the reader with unknown information.",
+    "question_option_C_translated": "synopsis, as it summarizes the relevant information of a work in an impersonal way.",
+    "question_option_D_translated": "instruction, as it teaches something through explanations about a specific work.",
+    "question_option_E_translated": "review, as it presents an intellectual production in a critical way.",
+    "type": "concrete"
+  },
+  {
+    "year": "2018",
+    "color": "azul",
+    "question_number": 44,
+    "field": "LC",
+    "question_text_translated": "Plagiarism Sniffer: a tool against illegal copying In the academic world or in the media, illegal copies can appear in different ways, being full, partial or paraphrases. To help combat this crime, professor Maximiliano Zambonatto Pezzin, a computer engineer, developed the Plagiarism Sniffer program with his students. The program is capable of detecting: continuous and fragmented passages, loose sentences, reorganized parts of texts, rewritten sentences, changes in the order of periods and phonetic and syntactic errors. But how does the program actually work? Considering the text as a sequence of words, the tool analyzes and searches section by section on search engines, just as a teacher suspicious of a student would do. The difference is that the program allows you to search in several search engines, thus generating much more results.",
+    "question_itself_translated": "According to the text, the Plagiarism Sniffer tool achieves its objective through",
+    "question_option_A_translated": "selection of full copies.",
+    "question_option_B_translated": "search on specialized websites.",
+    "question_option_C_translated": "simulation of teaching activity.",
+    "question_option_D_translated": "comparison of structural patterns.",
+    "question_option_E_translated": "phoneme sequence identification.",
+    "type": "concrete"
+  },
+
+2- We will use the fields: "question_text_translated", "question_itself_translated",  "question_option_A_translated", "question_option_B_translated", "question_option_C_translated":, "question_option_D_translated","question_option_E_translated"
+
+3- we will have two triggers for each question, first when the particpant see the question, which will show only the field "question_text_translated" and under it it will show a button "show question" which after clicked will do a new trigger and show only the fields: "question_itself_translated",  "question_option_A_translated", "question_option_B_translated", "question_option_C_translated":, "question_option_D_translated","question_option_E_translated"
+
+4- We will have block of 4 questions each with a random interval between the questions of 3 to 5 seconds.
+
+5- Between the blocks we will have a 30 seconds interval.we will have 5 blocks with a total of 20 questions showed.
+
+6- Which block need to have 2 questions where the field "type" is concrete and 2 questions where the "type" is abstract.
+
+7- we will log all the information, including time that started the experiment, the results of the socio economic questions, the time of each click and where, the options selected for the answer of the questions, the questions that were presented.
+
+
+
+
+1- need to put the correct answers
