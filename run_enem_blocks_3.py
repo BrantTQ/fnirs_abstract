@@ -1,10 +1,19 @@
 # run_enem_blocks.py
 # PsychoPy >= 2022.2 recommended
 
+# CRITICAL: Set preferences BEFORE importing visual module
+from psychopy import prefs
+prefs.general['measureFrameRate'] = False
+prefs.general['shutdownKey'] = 'escape'
+prefs.general['autoLog'] = False
+
+# Now import other modules
 from psychopy import visual, core, event, gui, data, logging
 from psychopy.hardware import keyboard
 import csv, os, time, random, sys, json
-from psychopy import visual, core, event, gui, data, logging, prefs
+
+# Disable console logging early
+logging.console.setLevel(logging.ERROR)
 
 print("Creating window...")
 
@@ -25,12 +34,6 @@ LSL_STREAM_TYPE = "Markers"
 
 # TTL config (used only if USE_FNIRS and USE_TTL)
 PARALLEL_PORT_ADDR = 0x0378  # Windows only
-
-prefs.general['shutdownKey'] = 'escape'   # (optional quality-of-life)
-# Crucial bits to avoid FPS sync stalls:
-prefs.general['winType'] = 'glfw'         # more stable on many GPUs (Win/Linux)
-
-prefs.general['measureFrameRate'] = False
 
 # Markers
 TRIGGER_MAP = {
@@ -54,9 +57,8 @@ TRIGGER_MAP = {
 MIN_ITI_SECS = 3.0             # Minimum inter-trial interval
 MAX_ITI_SECS = 5.0             # Maximum inter-trial interval
 BLOCK_REST_SECS = 30.0         # Rest between blocks
-FULLSCREEN = True
-WIN_SIZE = [1920, 1080]        # ignored if FULLSCREEN=True
-FPS = 60                       # for simple frame-based waits
+FULLSCREEN = False              # Set to True for fullscreen experiment
+WIN_SIZE = [1920, 1100]        # ignored if FULLSCREEN=True
 
 # Paths
 QUESTIONS_JSON = r"C:\Users\thiago-ext\Documents\FNIRS\psychopy\filtered_questions.json"
@@ -84,15 +86,35 @@ INSERT_QUESTIONNAIRE_AFTER_BLOCK = None  # don't also run it mid-experiment
 # =========================
 
 global_clock = core.MonotonicClock()
-win = visual.Window(
-    size=WIN_SIZE,
-    fullscr=FULLSCREEN,
-    color=[-1, -1, -1],
-    units="pix",
-    # checkTiming=False
-    
-)
-win.recordFrameIntervals = False   # don't collect interval stats
+
+# Simplified window creation with error handling
+print("Initializing window (this may take a moment)...")
+try:
+    win = visual.Window(
+        size=WIN_SIZE,
+        fullscr=FULLSCREEN,
+        color=[-1, -1, -1],
+        units="pix",
+        waitBlanking=False,    # CRITICAL: Disable vsync waiting
+        autoLog=False          # Disable auto-logging
+    )
+    win.recordFrameIntervals = False
+    print("Window created successfully!")
+except Exception as e:
+    print(f"ERROR creating window: {e}")
+    print("Trying alternative window creation...")
+    try:
+        # Even simpler fallback
+        win = visual.Window(
+            size=WIN_SIZE,
+            fullscr=False,  # Force windowed mode
+            color=[-1, -1, -1],
+            units="pix"
+        )
+        print("Window created with fallback method!")
+    except Exception as e2:
+        print(f"FATAL ERROR: Could not create window: {e2}")
+        sys.exit(1)
 
 kb = keyboard.Keyboard()
 mouse = event.Mouse(win=win)
@@ -200,7 +222,6 @@ log_writer.writerow([
     "question_type", "question_field", "marker_name", "marker_code",
     "rt_from_phase", "choice", "correct", "button_click_time", "option_view_time", "note"
 ])
-logging.console.setLevel(logging.WARNING)
 
 def log_event(phase, block_label, trial_idx, q_data, marker_name, code, t_phase_start, 
               choice="", correct="", button_click_t="", opt_view_t="", note=""):
