@@ -1,0 +1,18 @@
+t_abs,phase,block,trial_idx_in_block,question_number,question_year,question_type,question_field,marker_name,marker_code,rt_from_phase,choice,correct,button_click_time,option_view_time,note
+3.724963,experiment,START,-1,,,,,EXP_START,0,,,,,,Experiment started at 2025-10-24 15:10:37
+7.182635,questionnaire,PRE,-1,,,,,QUESTIONNAIRE_ON,71,,,,,,Questionnaire start
+9.963794,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,2.125656299991533,dsv,,,,type=text
+11.515887,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,1.552009699982591,Man,,,,type=choice
+12.782843,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,1.266885400051251,sdf,,,,type=text
+13.851164,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,1.0673481000121683,sdf,,,,type=text
+13.851230,questionnaire,PRE,-1,,,,,QUESTIONNAIRE_OFF,72,,,,,,Questionnaire end
+14.904444,block_start,A1,-1,,,,,BLK_ON,91,,,,,,A1 start (target 420s)
+19.374443,iti,A1,1,75,2019,abstract,CH,ITI,99,4.4699280998902395,,,,,ITI duration: 4.45s
+19.403638,q_text_on,A1,1,75,2019,abstract,CH,Q_TEXT_ON,11,1.5600002370774746e-05,,,,,
+23.140430,q_stem_on,A1,1,75,2019,abstract,CH,Q_STEM_ON,14,1.5400000847876072e-05,,,,,
+23.180485,q_options_on,A1,1,75,2019,abstract,CH,Q_OPTIONS_ON,15,1.5400000847876072e-05,,,,,
+75.030309,answer,A1,1,75,2019,abstract,CH,ANS_D,24,51.84983900003135,D,,,51.849831,
+79.989267,iti,A1,2,56,2019,abstract,CH,ITI,99,4.441766700008884,,,,,ITI duration: 4.42s
+80.017810,q_text_on,A1,2,56,2019,abstract,CH,Q_TEXT_ON,11,1.3899989426136017e-05,,,,,
+81.448418,q_stem_on,A1,2,56,2019,abstract,CH,Q_STEM_ON,14,1.3599987141788006e-05,,,,,
+81.502848,q_options_on,A1,2,56,2019,abstract,CH,Q_OPTIONS_ON,15,2.719997428357601e-05,,,,,

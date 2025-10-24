@@ -1,0 +1,2 @@
+t_abs,phase,block,trial_idx_in_block,question_number,question_year,question_type,question_field,marker_name,marker_code,rt_from_phase,choice,correct,button_click_time,option_view_time,note
+8.877036,experiment,START,-1,,,,,EXP_START,0,,,,,,Experiment started at 2025-10-21 13:58:19

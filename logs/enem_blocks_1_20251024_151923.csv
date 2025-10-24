@@ -1,0 +1,13 @@
+t_abs,phase,block,trial_idx_in_block,question_number,question_year,question_type,question_field,marker_name,marker_code,rt_from_phase,choice,correct,button_click_time,option_view_time,note
+4.765577,experiment,START,-1,,,,,EXP_START,0,,,,,,Experiment started at 2025-10-24 15:19:23
+5.595975,questionnaire,PRE,-1,,,,,QUESTIONNAIRE_ON,71,,,,,,Questionnaire start
+7.876979,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,1.7660431999247521,dd,,,,type=text
+9.080641,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,1.2035816999850795,Man,,,,type=choice
+10.045639,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,0.9648958999896422,dq,,,,type=text
+10.947181,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,0.9006159000564367,dwqw,,,,type=text
+10.947269,questionnaire,PRE,-1,,,,,QUESTIONNAIRE_OFF,72,,,,,,Questionnaire end
+11.998677,block_start,C1,-1,,,,,BLK_ON,91,,,,,,C1 start (target 420s)
+16.103179,iti,C1,1,84,2020,concrete,CH,ITI,99,4.104443899937905,,,,,ITI duration: 4.09s
+16.126531,q_text_on,C1,1,84,2020,concrete,CH,Q_TEXT_ON,11,1.6300007700920105e-05,,,,,
+21.951756,q_stem_on,C1,1,84,2020,concrete,CH,Q_STEM_ON,14,1.5300000086426735e-05,,,,,
+26.685299,q_options_on,C1,1,84,2020,concrete,CH,Q_OPTIONS_ON,15,1.4699995517730713e-05,,,,,

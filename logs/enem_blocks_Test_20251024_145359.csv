@@ -1,0 +1,25 @@
+t_abs,phase,block,trial_idx_in_block,question_number,question_year,question_type,question_field,marker_name,marker_code,rt_from_phase,choice,correct,button_click_time,option_view_time,note
+6.330685,experiment,START,-1,,,,,EXP_START,0,,,,,,Experiment started at 2025-10-24 14:53:59
+7.625095,questionnaire,PRE,-1,,,,,QUESTIONNAIRE_ON,71,,,,,,Questionnaire start
+13.859988,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,5.386718199937604,45,,,,type=text
+15.230559,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,1.3704657999332994,Man,,,,type=choice
+20.232861,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,5.002223700052127,brazil,,,,type=text
+24.054097,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,3.820242599933408,pt,,,,type=text
+24.054154,questionnaire,PRE,-1,,,,,QUESTIONNAIRE_OFF,72,,,,,,Questionnaire end
+25.212752,block_start,A1,-1,,,,,BLK_ON,91,,,,,,A1 start (target 420s)
+28.495205,iti,A1,1,60,2022,abstract,CH,ITI,99,3.282244800007902,,,,,ITI duration: 3.27s
+28.542714,question_text,A1,1,60,2022,abstract,CH,Q_TEXT_ON,11,1.6200006939470768e-05,,,,,
+38.228826,question_full,A1,1,60,2022,abstract,CH,Q_FULL_ON,12,1.98000343516469e-05,,,38.186173,,
+40.989226,back_to_text,A1,1,60,2022,abstract,CH,BACK_TO_TEXT,0,2.760420299950056,,,,,participant requested back once
+40.989345,question_text,A1,1,60,2022,abstract,CH,Q_TEXT_ON,11,1.2899981811642647e-05,,,,,revisit=1
+41.756629,question_full,A1,1,60,2022,abstract,CH,Q_FULL_ON,12,1.4199991710484028e-05,,,41.756574,,revisit=1
+44.060501,answer,A1,1,60,2022,abstract,CH,ANS_B,22,2.3038860999513417,B,,,2.303878,
+49.379410,iti,A1,2,57,2021,abstract,CH,ITI,99,4.803720199968666,,,,,ITI duration: 4.80s
+49.396847,question_text,A1,2,57,2021,abstract,CH,Q_TEXT_ON,11,1.580000389367342e-05,,,,,
+52.954488,question_full,A1,2,57,2021,abstract,CH,Q_FULL_ON,12,1.789990346878767e-05,,,52.934160,,
+54.169150,answer,A1,2,57,2021,abstract,CH,ANS_C,23,1.2146794999716803,C,,,1.214671,
+57.923956,iti,A1,3,83,2021,abstract,CH,ITI,99,3.2383133999537677,,,,,ITI duration: 3.23s
+57.957198,question_text,A1,3,83,2021,abstract,CH,Q_TEXT_ON,11,1.5199999324977398e-05,,,,,
+63.550720,question_full,A1,3,83,2021,abstract,CH,Q_FULL_ON,12,1.780001912266016e-05,,,63.529157,,
+65.848992,answer,A1,3,83,2021,abstract,CH,ANS_D,24,2.2982898000627756,D,,,2.298280,
+66.365747,block_rest_wait,A1,-1,,,,,BLOCK_REST,93,,,,,,Waiting 378.8s to complete 7-min block

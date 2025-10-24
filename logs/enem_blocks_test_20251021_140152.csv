@@ -1,0 +1,15 @@
+t_abs,phase,block,trial_idx_in_block,question_number,question_year,question_type,question_field,marker_name,marker_code,rt_from_phase,choice,correct,button_click_time,option_view_time,note
+7.075588,experiment,START,-1,,,,,EXP_START,0,,,,,,Experiment started at 2025-10-21 14:01:52
+8.479089,questionnaire,PRE,-1,,,,,QUESTIONNAIRE_ON,71,,,,,,Questionnaire start
+21.489438,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,9.783684400026686,eedf,,,,type=text
+25.773282,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,4.283720199950039,Man,,,,type=choice
+28.890212,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,3.11681919998955,fsf,,,,type=text
+31.241362,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,2.350159000023268,fds,,,,type=text
+31.241429,questionnaire,PRE,-1,,,,,QUESTIONNAIRE_OFF,72,,,,,,Questionnaire end
+31.254642,block_start,B1,-1,,,,,BLK_ON,91,,,,,,Block 1 of 5
+36.727861,iti,B1,1,47,2022,abstract,CH,ITI,99,4.282852999982424,,,,,ITI duration: 4.27s
+36.769527,question_text,B1,1,47,2022,abstract,CH,Q_TEXT_ON,11,1.98000343516469e-05,,,,,
+40.051241,question_full,B1,1,47,2022,abstract,CH,Q_FULL_ON,12,1.950003206729889e-05,,,39.996222,,
+45.431482,back_to_text,B1,1,47,2022,abstract,CH,BACK_TO_TEXT,0,5.380261500016786,,,,,participant requested back once
+45.431584,question_text,B1,1,47,2022,abstract,CH,Q_TEXT_ON,11,1.090002479031682e-05,,,,,revisit=1
+46.997714,question_full,B1,1,47,2022,abstract,CH,Q_FULL_ON,12,1.4499993994832039e-05,,,46.997657,,revisit=1
