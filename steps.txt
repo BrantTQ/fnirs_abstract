@@ -1,0 +1,20 @@
+Start anaconda prompt
+ 
+ 
+Create a conda env:
+ 
+conda create -n fnirs python=3.10 -y
+ 
+ 
+Activate the conda env:
+conda activate fnirs
+ 
+Install:
+pip install psychopy
+ 
+ 
+Run the script:
+#you need to change the address to your path
+python C:\Users\thiago-ext\Documents\FNIRS\psychopy\run_enem.py
+ 
+press esc to get out, or go on the window of the anconda prompt and press alt + f4

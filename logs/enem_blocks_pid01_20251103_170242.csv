@@ -1,0 +1,21 @@
+t_abs,phase,block,trial_idx_in_block,question_number,question_year,question_type,question_field,marker_name,marker_code,rt_from_phase,choice,correct,button_click_time,option_view_time,note
+6.200897,experiment,START,-1,,,,,EXP_START,0,,,,,,Experiment started at 2025-11-03 17:02:42
+8.047884,questionnaire,PRE,-1,,,QNR,start,QUESTIONNAIRE_ON,71,,,,,,Questionnaire start
+11.803628,questionnaire_item,PRE,-1,age,,QNR,Age (in years):,QNR_ITEM,0,,33,,,,qid=age; type=number; required=True
+12.804944,questionnaire_item,PRE,-1,country_of_birth,,QNR,Country of birth (free text):,QNR_ITEM,0,,44,,,,qid=country_of_birth; type=text; required=True
+13.622531,questionnaire_item,PRE,-1,nationality,,QNR,"Nationality (free text; if multiple, separate by commas):",QNR_ITEM,0,,3,,,,qid=nationality; type=text; required=True
+14.023372,questionnaire_item,PRE,-1,years_in_luxembourg,,QNR,Years living in Luxembourg (enter a number; use 0 if not living in LU):,QNR_ITEM,0,,3,,,,qid=years_in_luxembourg; type=number; required=True
+18.661399,questionnaire_item,PRE,-1,gender,,QNR,Gender — type exactly: Male or Female,QNR_ITEM,0,,male,,,,qid=gender; type=text; required=True
+24.950632,questionnaire_item,PRE,-1,first_language,,QNR,First language (mother tongue) — free text:,QNR_ITEM,0,,english,,,,qid=first_language; type=text; required=True
+33.659715,questionnaire_item,PRE,-1,other_languages,,QNR,Other languages you are comfortable using (free text; separate by commas):,QNR_ITEM,0,,gg,,,,qid=other_languages; type=text; required=False
+35.146510,questionnaire_item,PRE,-1,affiliation,,QNR,Current affiliation — type code: A) Bachelor student  B) Master student  C) PhD candidate  D) University employee (academic)  E) University employee (administrative/technical)  F) Other,QNR_ITEM,0,,g,,,,qid=affiliation; type=text; required=True
+36.428464,questionnaire_item,PRE,-1,department_unit,,QNR,Department or Unit (free text):,QNR_ITEM,0,,d,,,,qid=department_unit; type=text; required=True
+37.213703,questionnaire_item,PRE,-1,highest_degree,,QNR,Highest degree completed — type code: A) Upper-secondary  B) Some tertiary (no degree)  C) Bachelor  D) Master  E) Doctorate  F) Other,QNR_ITEM,0,,d,,,,qid=highest_degree; type=text; required=True
+37.779924,questionnaire_item,PRE,-1,degree_field,,QNR,"Field of highest degree (e.g., Computer Science, Economics) — free text:",QNR_ITEM,0,,d,,,,qid=degree_field; type=text; required=True
+38.283122,questionnaire_item,PRE,-1,country_secondary_ed,,QNR,Country where you completed most of your secondary education — free text:,QNR_ITEM,0,,d,,,,qid=country_secondary_ed; type=text; required=True
+38.730757,questionnaire_item,PRE,-1,primary_school_langs,,QNR,Primary schooling language(s) — free text (separate by commas if multiple):,QNR_ITEM,0,,d,,,,qid=primary_school_langs; type=text; required=True
+39.148838,questionnaire_item,PRE,-1,parent_a_edu,,QNR,Parent/Guardian A — highest education — type code: A) Less than upper-secondary  B) Upper-secondary  C) Post-secondary non-tertiary  D) Bachelor  E) Master  F) Doctorate  G) Don’t know  H) Prefer not to say,QNR_ITEM,0,,d,,,,qid=parent_a_edu; type=text; required=True
+39.582154,questionnaire_item,PRE,-1,parent_b_edu,,QNR,Parent/Guardian B — highest education — type code: A) Less than upper-secondary  B) Upper-secondary  C) Post-secondary non-tertiary  D) Bachelor  E) Master  F) Doctorate  G) Don’t know  H) Prefer not to say,QNR_ITEM,0,,d,,,,qid=parent_b_edu; type=text; required=True
+40.265698,questionnaire_item,PRE,-1,first_gen_he,,QNR,Are you first-generation in higher education? — type exactly: Yes / No / Don’t know,QNR_ITEM,0,,d,,,,qid=first_gen_he; type=text; required=True
+42.100996,questionnaire_item,PRE,-1,living_arrangement,,QNR,Current living arrangement — type code: A) Alone  B) With parents/family  C) With partner  D) With roommates  E) Student residence  F) Other  G) Prefer not to say,QNR_ITEM,0,,a,,,,qid=living_arrangement; type=text; required=False
+42.102642,questionnaire,PRE,-1,,,QNR,end,QUESTIONNAIRE_OFF,72,,,,,,Questionnaire end

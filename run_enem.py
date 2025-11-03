@@ -13,6 +13,8 @@ import csv, os, time, random, sys, json
 
 logging.console.setLevel(logging.ERROR)
 
+import re
+
 # ===== paths =====
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 LOG_DIR = os.path.join(BASE_DIR, "logs")
@@ -44,6 +46,9 @@ WIN_SIZE = [1920, 1100]
 BLOCK_DURATION_SECS = 7 * 60
 
 QUESTIONS_JSON = r"C:\Users\thiago-ext\Documents\FNIRS\psychopy\filtered_questions.json"
+
+SOCIO_Q_FILE = os.path.join(BASE_DIR, "demographics_questions.json")  # adjust if needed
+
 
 BLOCKS_PER_TYPE = 5
 QUESTIONS_PER_BLOCK = 3
@@ -278,73 +283,143 @@ def build_block_list(concrete_questions, abstract_questions):
     print(f"[PLAN] Block order: first {first_part} (5 blocks), then the other type (5 blocks).")
     return blocks
 
+def load_socio_questions(path=SOCIO_Q_FILE):
+    if not os.path.exists(path):
+        print(f"[QNR] Socioeconomic questions file not found: {path}")
+        cleanup_and_quit()
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    # basic sanity check
+    if not isinstance(data, list):
+        print("[QNR] Invalid format: expected a list of question objects.")
+        cleanup_and_quit()
+    return data
+
+def should_show_question(q, answers):
+    cond = q.get("show_if")
+    if not cond:
+        return True
+    ref_val = str(answers.get(cond.get("id", ""), "")).lower()
+    pattern = cond.get("regex", "")
+    try:
+        return re.search(pattern, ref_val) is not None
+    except re.error:
+        return True  # if regex invalid, fail open
 # ===== questionnaire =====
-SOCIO_INLINE = [
-    {"qid":"age","text":"What is your age?","type":"text","required":"yes"},
-    {"qid":"gender","text":"What is your gender?","type":"choice","options":"Woman,Man","required":"yes"},
-    {"qid":"country_birth","text":"Country of birth:","type":"text","required":"no"},
-    {"qid":"home_language","text":"Which language do you most often speak at home?","type":"text","required":"yes"},
-]
+def text_input_loop(prompt_text, required=True, numeric_only=False):
+    """
+    Simple text input field:
+      - ENTER confirms (enforces required & numeric if requested)
+      - BACKSPACE deletes
+      - ESC quits
+    """
+    input_box = visual.Rect(win, width=WRAP_PIX, height=60, fillColor=[-0.2,-0.2,-0.2],
+                            lineColor="black", pos=(0, -150))
+    input_text = visual.TextStim(win, text="", color="black", height=GEN_TEXT_HEIGHT,
+                                 pos=(0, -150), wrapWidth=WRAP_PIX * 0.95)
+    prompt = visual.TextStim(win, text=f"{prompt_text}\n(Type your answer. ENTER to confirm.)",
+                             color="black", height=GEN_TEXT_HEIGHT, wrapWidth=WRAP_PIX, pos=(0, 60))
+
+    typed = ""
+    while True:
+        prompt.draw(); input_box.draw(); input_text.text = typed; input_text.draw()
+        win.flip(); core.wait(0.001)
+
+        keys = kb.getKeys(waitRelease=False)
+        for k in keys:
+            name = k.name
+
+            if name == 'escape':
+                cleanup_and_quit()
+            elif name in ('return', 'num_enter'):
+                val = typed.strip()
+                if required and len(val) == 0:
+                    # keep looping until non-empty
+                    continue
+                if numeric_only and len(val) > 0 and not val.replace('.', '', 1).isdigit():
+                    # keep looping until numeric (allow integer or float)
+                    continue
+                return val
+            elif name == 'backspace':
+                typed = typed[:-1]
+            elif name == 'space':
+                typed += ' '
+            elif len(name) == 1:
+                # accept visible ASCII char
+                typed += name
+            # ignore other control keys
 
 def run_questionnaire(block_label="QNR"):
-    socio_questions = SOCIO_INLINE
-    if not socio_questions: return
+    socio_questions = load_socio_questions(SOCIO_Q_FILE)
+    if not socio_questions:
+        return
+
     mname, mcode, _ = send_marker("QUESTIONNAIRE_ON")
-    log_event("questionnaire", block_label, -1, {}, mname, mcode, None, note="Questionnaire start")
+    log_event("questionnaire", block_label, -1, {"type":"QNR","field":"start"},
+              mname, mcode, None, note="Questionnaire start")
+
     show_message("QUESTIONNAIRE\n\nAnswer the following questions.\nPress SPACE to continue.")
-    input_box = visual.Rect(win, width=WRAP_PIX, height=60, fillColor=[-0.2,-0.2,-0.2],
-                            lineColor="black", pos=(0,-150))
-    input_text = visual.TextStim(win, text="", color="black", height=GEN_TEXT_HEIGHT,
-                                 pos=(0,-150), wrapWidth=WRAP_PIX*0.95)
-    for q in socio_questions:
-        qid=q.get("qid","").strip(); text=q.get("text","").strip()
-        qtype=q.get("type","text").strip().lower()
-        opts=[o.strip() for o in q.get("options","").split(",") if o.strip()]
-        req=(q.get("required","no").strip().lower()=="yes")
-        answer=None; t_start=global_clock.getTime()
-        if qtype=="choice" and opts:
-            choice_boxes, choice_labels = [], []
-            for i,opt in enumerate(opts):
-                y = 100 - i*80
-                b = visual.Rect(win, width=400, height=60, fillColor=[-0.2,-0.2,-0.2],
-                                lineColor="black", pos=(0,y))
-                t = visual.TextStim(win, text=f"{i+1}) {opt}", color="black",
-                                    height=OPTION_TEXT_HEIGHT, pos=(0,y))
-                choice_boxes.append(b); choice_labels.append(t)
-            prompt = visual.TextStim(win, text=text, color="black", height=GEN_TEXT_HEIGHT,
-                                     wrapWidth=WRAP_PIX, pos=(0,200))
-            while answer is None:
-                prompt.draw()
-                for b,t in zip(choice_boxes, choice_labels): b.draw(); t.draw()
-                win.flip()
-                if mouse.getPressed()[0]:
-                    for i,b in enumerate(choice_boxes):
-                        if b.contains(mouse): answer=opts[i]; break
-                keys = kb.getKeys([str(i+1) for i in range(len(opts))]+['escape','space'], waitRelease=False)
-                if keys:
-                    if keys[0].name=='escape': cleanup_and_quit()
-                    if keys[0].name.isdigit():
-                        idx=int(keys[0].name)-1
-                        if 0<=idx<len(opts): answer=opts[idx]
-        else:
-            prompt = visual.TextStim(win, text=f"{text}\n(Type your answer. ENTER to confirm.)",
-                                     color="black", height=GEN_TEXT_HEIGHT, wrapWidth=WRAP_PIX, pos=(0,60))
-            typed=""
-            while True:
-                prompt.draw(); input_box.draw(); input_text.text=typed; input_text.draw()
-                win.flip()
-                keys=kb.getKeys(waitRelease=False)
-                for k in keys:
-                    if k.name=='escape': cleanup_and_quit()
-                    elif k.name=='backspace': typed=typed[:-1]
-                    elif k.name in ('return','num_enter'):
-                        if not(req and len(typed.strip())==0): answer=typed; break
-                    elif len(k.name)==1: typed+=k.name
-                if answer is not None: break
-        log_event("questionnaire_item", block_label,-1, {"qid":qid}, "QNR_ITEM",0,t_start,
-                  choice=answer if answer is not None else "", note=f"type={qtype}")
+
+    answers = {}
+    for i, q in enumerate(socio_questions, 1):
+        # ---- parse question ----
+        qid = str(q.get("id", "")).strip()
+        if not qid:
+            qid = f"qnr_{i:02d}"  # fallback so logging never breaks
+        prompt = str(q.get("prompt", "")).strip()
+        qtype  = str(q.get("type", "text") or "text").strip().lower()
+        required = bool(q.get("required", False))
+        if not prompt:
+            continue  # skip malformed entries
+
+        # ---- conditional display ----
+        if not should_show_question(q, answers):
+            continue
+
+        # ---- collect answer ----
+        numeric = (qtype == "number")
+        answer = text_input_loop(prompt, required=required, numeric_only=numeric)
+
+        # optional strict gender check
+        if qid == "gender":
+            while str(answer).strip().lower() not in ("male", "female"):
+                answer = text_input_loop("Please enter exactly 'Male' or 'Female':", required=True)
+
+        answers[qid] = answer
+
+        # ---- log in your existing CSV columns ----
+        log_event(
+            "questionnaire_item",
+            block_label,
+            -1,
+            {
+                "question_number": qid,   # shows in CSV 'question_number'
+                "year": "",               # unused
+                "type": "QNR",            # shows in CSV 'question_type'
+                "field": prompt           # shows in CSV 'question_field'
+            },
+            "QNR_ITEM",
+            0,
+            None,
+            choice=str(answer),
+            note=f"qid={qid}; type={qtype}; required={required}"
+        )
+
+    # save all answers as JSON in logs/
+    socio_out = os.path.join(LOG_DIR, f"socio_{exp_info['participant']}_{timestamp}.json")
+    try:
+        with open(socio_out, "w", encoding="utf-8") as sf:
+            json.dump(answers, sf, ensure_ascii=False, indent=2)
+        print(f"[QNR] Saved responses to {socio_out}")
+    except Exception as e:
+        print(f"[QNR] Could not save socio responses: {e}")
+
     mname, mcode, _ = send_marker("QUESTIONNAIRE_OFF")
-    log_event("questionnaire", block_label, -1, {}, mname, mcode, None, note="Questionnaire end")
+    log_event("questionnaire", block_label, -1, {"type":"QNR","field":"end"},
+              mname, mcode, None, note="Questionnaire end")
+
+
+
 
 # ===== trial =====
 def run_trial(block_label, idx_in_block, question_data):

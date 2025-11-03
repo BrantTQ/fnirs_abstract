@@ -1,0 +1,56 @@
+t_abs,phase,block,trial_idx_in_block,question_number,question_year,question_type,question_field,marker_name,marker_code,rt_from_phase,choice,correct,button_click_time,option_view_time,note
+5.178441,experiment,START,-1,,,,,EXP_START,0,,,,,,Experiment started at 2025-11-03 16:13:57
+6.836050,questionnaire,PRE,-1,,,,,QUESTIONNAIRE_ON,71,,,,,,Questionnaire start
+12.780191,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,45,,,,type=number; required=True
+16.599032,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,braxi,,,,type=text; required=True
+24.589714,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,bra,,,,type=text; required=True
+30.012079,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,4,,,,type=number; required=True
+33.048175,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,male,,,,type=text; required=True
+41.492007,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,portuguese,,,,type=text; required=True
+47.949217,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,bt,,,,type=text; required=False
+67.549093,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,bachelor,,,,type=text; required=True
+75.406799,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,social science,,,,type=text; required=True
+79.927195,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,master,,,,type=text; required=True
+88.470883,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,economics,,,,type=text; required=True
+93.427986,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,brazil,,,,type=text; required=True
+100.815915,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,portuguese,,,,type=text; required=True
+123.123984,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,tertyary education,,,,type=text; required=True
+125.473920,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,ter,,,,type=text; required=True
+132.246893,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,no,,,,type=text; required=True
+137.018136,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,ed,,,,type=text; required=False
+137.019614,questionnaire,PRE,-1,,,,,QUESTIONNAIRE_OFF,72,,,,,,Questionnaire end
+138.190475,block_start,C1,-1,,,,,BLK_ON,91,,,,,,C1 start (target 420s)
+142.643658,iti,C1,1,44,2018,concrete,LC,ITI,99,4.452971699996851,,,,,ITI duration: 4.43s
+142.700326,q_text_on,C1,1,44,2018,concrete,LC,Q_TEXT_ON,11,1.6400008462369442e-05,,,,,
+167.521330,q_stem_on,C1,1,44,2018,concrete,LC,Q_STEM_ON,14,1.8699909560382366e-05,,,,,
+174.036511,q_options_on,C1,1,44,2018,concrete,LC,Q_OPTIONS_ON,15,1.6200006939470768e-05,,,,,
+182.226538,answer,C1,1,44,2018,concrete,LC,ANS_A,21,8.190042900037952,A,,,8.190030,
+187.021280,iti,C1,2,59,2020,concrete,CH,ITI,99,4.2723202999914065,,,,,ITI duration: 4.26s
+187.057526,q_text_on,C1,2,59,2020,concrete,CH,Q_TEXT_ON,11,1.4899997040629387e-05,,,,,
+201.702058,q_stem_on,C1,2,59,2020,concrete,CH,Q_STEM_ON,14,1.4999997802078724e-05,,,,,
+206.783335,q_options_on,C1,2,59,2020,concrete,CH,Q_OPTIONS_ON,15,1.4699995517730713e-05,,,,,
+220.561999,answer,C1,2,59,2020,concrete,CH,ANS_E,25,13.778678999980912,E,,,13.778671,
+225.811989,iti,C1,3,56,2020,concrete,CH,ITI,99,4.739519000053406,,,,,ITI duration: 4.72s
+225.833702,q_text_on,C1,3,56,2020,concrete,CH,Q_TEXT_ON,11,1.4599994756281376e-05,,,,,
+228.598294,q_stem_on,C1,3,56,2020,concrete,CH,Q_STEM_ON,14,1.4099990949034691e-05,,,,,
+230.408387,q_options_on,C1,3,56,2020,concrete,CH,Q_OPTIONS_ON,15,1.580000389367342e-05,,,,,
+245.535571,answer,C1,3,56,2020,concrete,CH,ANS_D,24,15.127199999988079,D,,,15.127192,
+246.048232,block_rest_wait,C1,-1,,,,,BLOCK_REST,93,,,,,,Waiting 312.1s to complete 7-min block
+558.206246,block_end,C1,-1,,,,,BLK_OFF,92,,,,,,C1 end (actual 420.0s)
+584.983363,block_start,C2,-1,,,,,BLK_ON,91,,,,,,C2 start (target 420s)
+588.487373,iti,C2,1,82,2020,concrete,CH,ITI,99,3.5039450000040233,,,,,ITI duration: 3.49s
+588.523052,q_text_on,C2,1,82,2020,concrete,CH,Q_TEXT_ON,11,1.8300022929906845e-05,,,,,
+608.304089,q_stem_on,C2,1,82,2020,concrete,CH,Q_STEM_ON,14,4.070007707923651e-05,,,,,
+614.391434,q_options_on,C2,1,82,2020,concrete,CH,Q_OPTIONS_ON,15,1.5600002370774746e-05,,,,,
+625.484015,answer,C2,1,82,2020,concrete,CH,ANS_A,21,11.092597299953923,A,,,11.092584,
+630.546352,iti,C2,2,84,2020,concrete,CH,ITI,99,4.554846200044267,,,,,ITI duration: 4.54s
+630.566175,q_text_on,C2,2,84,2020,concrete,CH,Q_TEXT_ON,11,1.5300000086426735e-05,,,,,
+645.577795,q_stem_on,C2,2,84,2020,concrete,CH,Q_STEM_ON,14,1.4999997802078724e-05,,,,,
+657.655533,q_options_on,C2,2,84,2020,concrete,CH,Q_OPTIONS_ON,15,1.5300000086426735e-05,,,,,
+665.722457,answer,C2,2,84,2020,concrete,CH,ANS_C,23,8.06693880003877,C,,,8.066929,
+669.552888,iti,C2,3,46,2021,concrete,CH,ITI,99,3.3189533000113443,,,,,ITI duration: 3.31s
+669.583556,q_text_on,C2,3,46,2021,concrete,CH,Q_TEXT_ON,11,2.0299921743571758e-05,,,,,
+686.391284,q_stem_on,C2,3,46,2021,concrete,CH,Q_STEM_ON,14,1.819990575313568e-05,,,,,
+690.928899,q_options_on,C2,3,46,2021,concrete,CH,Q_OPTIONS_ON,15,1.550000160932541e-05,,,,,
+699.943493,answer,C2,3,46,2021,concrete,CH,ANS_B,22,9.014609400066547,B,,,9.014602,
+700.448098,block_rest_wait,C2,-1,,,,,BLOCK_REST,93,,,,,,Waiting 304.5s to complete 7-min block

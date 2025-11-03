@@ -1,0 +1,24 @@
+t_abs,phase,block,trial_idx_in_block,question_number,question_year,question_type,question_field,marker_name,marker_code,rt_from_phase,choice,correct,button_click_time,option_view_time,note
+5.427167,experiment,START,-1,,,,,EXP_START,0,,,,,,Experiment started at 2025-11-03 16:31:11
+6.772311,questionnaire,PRE,-1,,,,,QUESTIONNAIRE_ON,71,,,,,,Questionnaire start
+12.809698,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,55,,,,type=number; required=True
+16.346024,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,vf,,,,type=text; required=True
+20.450344,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,vf,,,,type=text; required=True
+28.441950,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,5,,,,type=number; required=True
+36.063840,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,male,,,,type=text; required=True
+44.922513,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,english,,,,type=text; required=True
+51.247097,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,portuguese,,,,type=text; required=False
+60.372960,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,a,,,,type=text; required=True
+67.764201,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,medialab,,,,type=text; required=True
+80.158779,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,azx,,,,type=text; required=False
+85.731160,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,a,,,,type=text; required=False
+90.786887,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,2,,,,type=number; required=False
+99.111156,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,a,,,,type=text; required=True
+105.534408,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,eco,,,,type=text; required=True
+107.920899,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,sd,,,,type=text; required=True
+109.571621,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,dsa,,,,type=text; required=True
+128.008016,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,h,,,,type=text; required=True
+129.623906,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,sd,,,,type=text; required=True
+130.743420,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,sd,,,,type=text; required=True
+132.560721,questionnaire_item,PRE,-1,,,,,QNR_ITEM,0,,s,,,,type=text; required=False
+132.563192,questionnaire,PRE,-1,,,,,QUESTIONNAIRE_OFF,72,,,,,,Questionnaire end
