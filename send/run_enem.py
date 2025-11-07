@@ -30,10 +30,10 @@ os.makedirs(LOG_DIR, exist_ok=True)
 
 # ===== config =====
 # NOTE: Set USE_FNIRS=True and USE_LSL=True to actually send markers
-USE_FNIRS = True
+USE_FNIRS = False
 USE_LSL = True
 USE_TTL = False
-LSL_STREAM_NAME = "Triggers"
+LSL_STREAM_NAME = "psychopy_markers"
 LSL_STREAM_TYPE = "Markers"
 PARALLEL_PORT_ADDR = 0x0378
 
@@ -62,11 +62,11 @@ BLOCKS_PER_TYPE = 5
 QUESTIONS_PER_BLOCK = 3
 N_BLOCKS = BLOCKS_PER_TYPE * 2
 
-STEM_TEXT_HEIGHT = 26
-GEN_TEXT_HEIGHT = 24
-OPTION_TEXT_HEIGHT = 20
+STEM_TEXT_HEIGHT = 28
+GEN_TEXT_HEIGHT = 26
+OPTION_TEXT_HEIGHT = 24
 
-RUN_QUESTIONNAIRE_BEFORE = False
+RUN_QUESTIONNAIRE_BEFORE = True
 INSERT_QUESTIONNAIRE_AFTER_BLOCK = None
 
 # ===== core/window =====
@@ -98,9 +98,9 @@ SCREEN_W, SCREEN_H = win.size
 LEFT_X = -SCREEN_W//2 + 60   # visible left margin
 WRAP_PIX = int(SCREEN_W * 0.86)
 
-TEXT_Y     = 330
-QUESTION_Y = 80
-OPTIONS_Y0 =  10
+TEXT_Y     = 320
+QUESTION_Y = 160
+OPTIONS_Y0 =  40
 OPTION_STEP = -70
 BUTTON_Y   = -320
 
@@ -129,7 +129,7 @@ for i in range(5):
     y = OPTIONS_Y0 + i*OPTION_STEP
     t = visual.TextStim(
         win, text="", color="black", height=OPTION_TEXT_HEIGHT,
-        wrapWidth=WRAP_PIX, alignText='left', pos=(LEFT_X + 54, y),
+        wrapWidth=WRAP_PIX, alignText='left', pos=(LEFT_X + 44, y),
         anchorHoriz='left', anchorVert='center'
     )
     opt_texts.append(t)

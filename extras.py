@@ -22,4 +22,8 @@
 
 
 
-python C:\Users\thiago-ext\Documents\FNIRS\psychopy\run_enem_blocks_3.py
+python C:\Users\thiago-ext\Documents\FNIRS\psychopy\run_enem.py
+
+
+
+python C:\Users\thiago-ext\Documents\FNIRS\psychopy\test.py

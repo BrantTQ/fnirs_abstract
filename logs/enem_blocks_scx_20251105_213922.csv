@@ -1,0 +1,4 @@
+t_abs,phase,block,trial_idx_in_block,question_number,question_year,question_type,question_field,marker_name,marker_code,rt_from_phase,choice,correct,button_click_time,option_view_time,note
+3.387547,experiment,START,-1,,,,,EXP_START,0,,,,,,Experiment started at 2025-11-05 21:39:22
+4.661813,questionnaire,PRE,-1,,,QNR,start,QUESTIONNAIRE_ON,71,,,,,,Questionnaire start
+8.913752,questionnaire_item,PRE,-1,age,,QNR,Age (in years):,QNR_ITEM,0,,33,,,,qid=age; type=number; required=True

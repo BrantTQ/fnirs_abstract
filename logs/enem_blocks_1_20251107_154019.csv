@@ -1,0 +1,7 @@
+t_abs,phase,block,trial_idx_in_block,question_number,question_year,question_type,question_field,marker_name,marker_code,rt_from_phase,choice,correct,button_click_time,option_view_time,note
+3.027536,experiment,START,-1,,,,,EXP_START,0,,,,,,Experiment started at 2025-11-07 15:40:19
+4.751293,block_start,C1,-1,,,,,BLK_ON,91,,,,,,C1 start (target 420s)
+8.506511,iti,C1,1,75,2017,concrete,CH,ITI,99,3.7550311999802943,,,,,ITI duration: 3.74s
+8.544928,q_text_on,C1,1,75,2017,concrete,CH,Q_TEXT_ON,11,3.199998172931373e-05,,,,,
+12.903445,q_stem_on,C1,1,75,2017,concrete,CH,Q_STEM_ON,14,2.880001557059586e-05,,,,,
+14.350380,q_options_on,C1,1,75,2017,concrete,CH,Q_OPTIONS_ON,15,3.090000245720148e-05,,,,,
