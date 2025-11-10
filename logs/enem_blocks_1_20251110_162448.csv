@@ -1,0 +1,25 @@
+t_abs,phase,block,trial_idx_in_block,question_number,question_year,question_type,question_field,marker_name,marker_code,rt_from_phase,choice,correct,button_click_time,option_view_time,note
+9.892523,experiment,START,-1,,,,,EXP_START,0,,,,,,Experiment started at 2025-11-10 16:24:48
+14.384661,experiment,PING,-1,,,,,PING,0,,,,,,Post-welcome ping
+14.393759,questionnaire,PRE,-1,,,QNR,start,QUESTIONNAIRE_ON,71,,,,,,Questionnaire start
+20.355852,questionnaire_item,PRE,-1,age,,QNR,Age (in years):,QNR_ITEM,0,,89,,,,qid=age; type=number; required=True
+22.174228,questionnaire_item,PRE,-1,country_of_birth,,QNR,"Country of birth (write in plain text, no commas):",QNR_ITEM,0,,hcj,,,,qid=country_of_birth; type=text; required=True
+23.608669,questionnaire_item,PRE,-1,nationality,,QNR,"Nationality (write in plain text, no commas):",QNR_ITEM,0,,sac,,,,qid=nationality; type=text; required=True
+26.245042,questionnaire_item,PRE,-1,years_in_luxembourg,,QNR,Years living in Luxembourg (enter a number; use 0 if not living in LU):,QNR_ITEM,0,,44,,,,qid=years_in_luxembourg; type=number; required=True
+29.430954,questionnaire_item,PRE,-1,gender,,QNR,Gender (write 'male' or 'female'):,QNR_ITEM,0,,male,,,,qid=gender; type=text; required=True
+30.949188,questionnaire_item,PRE,-1,first_language,,QNR,First language (mother tongue) — write in plain text:,QNR_ITEM,0,,dcdvc,,,,qid=first_language; type=text; required=True
+32.251759,questionnaire_item,PRE,-1,other_languages,,QNR,Other languages you are comfortable using — write in plain text:,QNR_ITEM,0,,dc,,,,qid=other_languages; type=text; required=False
+39.625503,questionnaire_item,PRE,-1,affiliation,,QNR,"Current affiliation (e.g., Bachelor student, Master student, PhD candidate, university employee):",QNR_ITEM,0,,df,,,,qid=affiliation; type=text; required=True
+41.376529,questionnaire_item,PRE,-1,department_unit,,QNR,Department or Unit:,QNR_ITEM,0,,dfd,,,,qid=department_unit; type=text; required=True
+43.645010,questionnaire_item,PRE,-1,highest_degree,,QNR,"Highest degree completed (e.g., Upper-secondary, Bachelor, Master, Doctorate):",QNR_ITEM,0,,dsf,,,,qid=highest_degree; type=text; required=True
+46.064917,questionnaire_item,PRE,-1,degree_field,,QNR,"Field of highest degree (e.g., Computer Science, Economics):",QNR_ITEM,0,,dfds,,,,qid=degree_field; type=text; required=True
+47.099216,questionnaire_item,PRE,-1,country_secondary_ed,,QNR,Country where you completed most of your secondary education:,QNR_ITEM,0,,dsfd,,,,qid=country_secondary_ed; type=text; required=True
+48.149551,questionnaire_item,PRE,-1,primary_school_langs,,QNR,Primary schooling language(s) — write in plain text as a sentence (no commas):,QNR_ITEM,0,,sdf,,,,qid=primary_school_langs; type=text; required=True
+49.502611,questionnaire_item,PRE,-1,parent_a_edu,,QNR,Parent/Guardian A — highest education:,QNR_ITEM,0,,sdf,,,,qid=parent_a_edu; type=text; required=True
+50.369432,questionnaire_item,PRE,-1,parent_b_edu,,QNR,Parent/Guardian B — highest education:,QNR_ITEM,0,,sdf,,,,qid=parent_b_edu; type=text; required=True
+57.108459,questionnaire_item,PRE,-1,first_gen_he,,QNR,"Are you first-generation in higher education? (answer in plain text, e.g., Yes / No / Don’t know):",QNR_ITEM,0,,no,,,,qid=first_gen_he; type=text; required=True
+58.860389,questionnaire_item,PRE,-1,living_arrangement,,QNR,Current living arrangement:,QNR_ITEM,0,,asc,,,,qid=living_arrangement; type=text; required=False
+58.861739,questionnaire,PRE,-1,,,QNR,end,QUESTIONNAIRE_OFF,72,,,,,,Questionnaire end
+63.215872,block_start,C1,-1,,,,,BLK_ON,91,,,,,,C1 start (target 420s)
+66.386126,iti,C1,1,70,2020,concrete,CH,ITI,99,3.1699956000084057,,,,,ITI duration: 3.15s
+66.429117,q_text_on,C1,1,70,2020,concrete,CH,Q_TEXT_ON,11,2.9600050766021013e-05,,,,,

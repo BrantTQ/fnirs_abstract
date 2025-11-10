@@ -1,0 +1,56 @@
+t_abs,phase,block,trial_idx_in_block,question_number,question_year,question_type,question_field,marker_name,marker_code,rt_from_phase,choice,correct,button_click_time,option_view_time,note
+7.426564,experiment,START,-1,,,,,EXP_START,0,,,,,,Experiment started at 2025-11-10 16:30:47
+20.608578,experiment,PING,-1,,,,,PING,0,,,,,,Post-welcome ping
+20.609024,questionnaire,PRE,-1,,,QNR,start,QUESTIONNAIRE_ON,71,,,,,,Questionnaire start
+25.043380,questionnaire_item,PRE,-1,age,,QNR,Age (in years):,QNR_ITEM,0,,33,,,,qid=age; type=number; required=True
+26.443960,questionnaire_item,PRE,-1,country_of_birth,,QNR,"Country of birth (write in plain text, no commas):",QNR_ITEM,0,,d,,,,qid=country_of_birth; type=text; required=True
+27.610833,questionnaire_item,PRE,-1,nationality,,QNR,"Nationality (write in plain text, no commas):",QNR_ITEM,0,,d,,,,qid=nationality; type=text; required=True
+28.946364,questionnaire_item,PRE,-1,years_in_luxembourg,,QNR,Years living in Luxembourg (enter a number; use 0 if not living in LU):,QNR_ITEM,0,,3,,,,qid=years_in_luxembourg; type=number; required=True
+32.466726,questionnaire_item,PRE,-1,gender,,QNR,Gender (write 'male' or 'female'):,QNR_ITEM,0,,male,,,,qid=gender; type=text; required=True
+36.804109,questionnaire_item,PRE,-1,first_language,,QNR,First language (mother tongue) — write in plain text:,QNR_ITEM,0,,dc,,,,qid=first_language; type=text; required=True
+37.804693,questionnaire_item,PRE,-1,other_languages,,QNR,Other languages you are comfortable using — write in plain text:,QNR_ITEM,0,,dc,,,,qid=other_languages; type=text; required=False
+38.623655,questionnaire_item,PRE,-1,affiliation,,QNR,"Current affiliation (e.g., Bachelor student, Master student, PhD candidate, university employee):",QNR_ITEM,0,,ddc,,,,qid=affiliation; type=text; required=True
+39.440719,questionnaire_item,PRE,-1,department_unit,,QNR,Department or Unit:,QNR_ITEM,0,,cd,,,,qid=department_unit; type=text; required=True
+40.291889,questionnaire_item,PRE,-1,highest_degree,,QNR,"Highest degree completed (e.g., Upper-secondary, Bachelor, Master, Doctorate):",QNR_ITEM,0,,cd,,,,qid=highest_degree; type=text; required=True
+41.024468,questionnaire_item,PRE,-1,degree_field,,QNR,"Field of highest degree (e.g., Computer Science, Economics):",QNR_ITEM,0,,cd,,,,qid=degree_field; type=text; required=True
+41.741599,questionnaire_item,PRE,-1,country_secondary_ed,,QNR,Country where you completed most of your secondary education:,QNR_ITEM,0,,cd,,,,qid=country_secondary_ed; type=text; required=True
+42.926102,questionnaire_item,PRE,-1,primary_school_langs,,QNR,Primary schooling language(s) — write in plain text as a sentence (no commas):,QNR_ITEM,0,,cd,,,,qid=primary_school_langs; type=text; required=True
+43.994691,questionnaire_item,PRE,-1,parent_a_edu,,QNR,Parent/Guardian A — highest education:,QNR_ITEM,0,,dc,,,,qid=parent_a_edu; type=text; required=True
+44.664048,questionnaire_item,PRE,-1,parent_b_edu,,QNR,Parent/Guardian B — highest education:,QNR_ITEM,0,,dc,,,,qid=parent_b_edu; type=text; required=True
+46.632307,questionnaire_item,PRE,-1,first_gen_he,,QNR,"Are you first-generation in higher education? (answer in plain text, e.g., Yes / No / Don’t know):",QNR_ITEM,0,,cd,,,,qid=first_gen_he; type=text; required=True
+47.799750,questionnaire_item,PRE,-1,living_arrangement,,QNR,Current living arrangement:,QNR_ITEM,0,,d,,,,qid=living_arrangement; type=text; required=False
+47.800961,questionnaire,PRE,-1,,,QNR,end,QUESTIONNAIRE_OFF,72,,,,,,Questionnaire end
+51.323370,block_start,C1,-1,,,,,BLK_ON,91,,,,,,C1 start (target 420s)
+55.274585,iti,C1,1,84,2020,concrete,CH,ITI,99,3.9510327000170946,,,,,ITI duration: 3.94s
+55.303850,q_text_on,C1,1,84,2020,concrete,CH,Q_TEXT_ON,11,3.2599957194179296e-05,,,,,
+57.000181,button_click,C1,1,84,2020,concrete,CH,BUTTON_CLICK,13,1.6963636999716982,,,1.696349,,
+57.123891,q_stem_on,C1,1,84,2020,concrete,CH,Q_STEM_ON,14,3.090000245720148e-05,,,,,
+58.652184,button_click,C1,1,84,2020,concrete,CH,BUTTON_CLICK,13,1.5283233000081964,,,1.528314,,
+58.798874,q_options_on,C1,1,84,2020,concrete,CH,Q_OPTIONS_ON,15,2.9799994081258774e-05,,,,,
+60.773485,answer,C1,1,84,2020,concrete,CH,ANS_A,21,1.97464090003632,A,,,1.974626,
+65.518213,iti,C1,2,69,2017,concrete,CH,ITI,99,4.221383199968841,,,,,ITI duration: 4.20s
+65.538183,q_text_on,C1,2,69,2017,concrete,CH,Q_TEXT_ON,11,3.1100003980100155e-05,,,,,
+66.560449,button_click,C1,2,69,2017,concrete,CH,BUTTON_CLICK,13,1.0222968999878503,,,1.022279,,
+66.692992,q_stem_on,C1,2,69,2017,concrete,CH,Q_STEM_ON,14,2.9799994081258774e-05,,,,,
+67.678093,button_click,C1,2,69,2017,concrete,CH,BUTTON_CLICK,13,0.9851307999924757,,,0.985119,,
+67.815701,q_options_on,C1,2,69,2017,concrete,CH,Q_OPTIONS_ON,15,3.2100011594593525e-05,,,,,
+69.129370,answer,C1,2,69,2017,concrete,CH,ANS_C,23,1.3137009000056423,C,,,1.313691,
+73.757585,iti,C1,3,68,2017,concrete,CH,ITI,99,4.116911400051322,,,,,ITI duration: 4.11s
+73.780906,q_text_on,C1,3,68,2017,concrete,CH,Q_TEXT_ON,11,5.760003114119172e-05,,,,,
+74.685750,button_click,C1,3,68,2017,concrete,CH,BUTTON_CLICK,13,0.9049012000323273,,,0.904886,,
+74.811229,q_stem_on,C1,3,68,2017,concrete,CH,Q_STEM_ON,14,3.190001007169485e-05,,,,,
+75.835883,button_click,C1,3,68,2017,concrete,CH,BUTTON_CLICK,13,1.0246858000173233,,,1.024671,,
+75.970934,q_options_on,C1,3,68,2017,concrete,CH,Q_OPTIONS_ON,15,3.029999788850546e-05,,,,,
+76.988139,answer,C1,3,68,2017,concrete,CH,ANS_B,22,1.0172360999858938,B,,,1.017220,
+77.494556,block_rest_wait,C1,-1,,,,,BLOCK_REST,93,,,,,,Waiting 393.8s to complete 7-min block
+471.335820,block_end,C1,-1,,,,,BLK_OFF,92,,,,,,C1 end (actual 420.0s)
+521.706472,block_start,C2,-1,,,,,BLK_ON,91,,,,,,C2 start (target 420s)
+524.727147,iti,C2,1,76,2021,concrete,CH,ITI,99,3.020511299953796,,,,,ITI duration: 3.01s
+524.769131,q_text_on,C2,1,76,2021,concrete,CH,Q_TEXT_ON,11,3.0800001695752144e-05,,,,,
+525.818235,button_click,C2,1,76,2021,concrete,CH,BUTTON_CLICK,13,1.0491340000298806,,,1.049125,,
+525.946661,q_stem_on,C2,1,76,2021,concrete,CH,Q_STEM_ON,14,4.88999648950994e-05,,,,,
+526.703800,button_click,C2,1,76,2021,concrete,CH,BUTTON_CLICK,13,0.7571875000139698,,,0.757177,,
+526.853869,q_options_on,C2,1,76,2021,concrete,CH,Q_OPTIONS_ON,15,5.470000905916095e-05,,,,,
+528.587012,answer,C2,1,76,2021,concrete,CH,ANS_A,21,1.733198000001721,A,,,1.733183,
+533.819122,iti,C2,2,70,2020,concrete,CH,ITI,99,4.72419230005471,,,,,ITI duration: 4.72s
+533.847381,q_text_on,C2,2,70,2020,concrete,CH,Q_TEXT_ON,11,4.3000036384910345e-05,,,,,

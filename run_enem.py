@@ -50,7 +50,7 @@ TRIGGER_MAP = {
 
 MIN_ITI_SECS = 3.0
 MAX_ITI_SECS = 5.0
-FULLSCREEN = False
+FULLSCREEN = True
 WIN_SIZE = [1920, 1100]
 BLOCK_DURATION_SECS = 7 * 60
 
@@ -66,7 +66,7 @@ STEM_TEXT_HEIGHT = 26
 GEN_TEXT_HEIGHT = 24
 OPTION_TEXT_HEIGHT = 20
 
-RUN_QUESTIONNAIRE_BEFORE = False
+RUN_QUESTIONNAIRE_BEFORE = True
 INSERT_QUESTIONNAIRE_AFTER_BLOCK = None
 
 # ===== core/window =====
@@ -518,6 +518,10 @@ def run_trial(block_label, idx_in_block, question_data):
         if mouse.isPressedIn(button_show, buttons=[0]):
             wait_for_mouse_release()
             send_marker("BUTTON_CLICK")
+            click_t = global_clock.getTime()
+            log_event("button_click", block_label, idx_in_block, question_data,
+                      "BUTTON_CLICK", TRIGGER_MAP["BUTTON_CLICK"], t_on,
+                      button_click_t=f"{click_t - t_on:.6f}")
             debounce_after_trigger()
             break
 
@@ -526,6 +530,10 @@ def run_trial(block_label, idx_in_block, question_data):
         if keys:
             if keys[0].name=='escape': cleanup_and_quit()
             send_marker("BUTTON_CLICK")
+            click_t = global_clock.getTime()
+            log_event("button_click", block_label, idx_in_block, question_data,
+                      "BUTTON_CLICK", TRIGGER_MAP["BUTTON_CLICK"], t_on,
+                      button_click_t=f"{click_t - t_on:.6f}")
             debounce_after_trigger()
             break
 
@@ -547,6 +555,10 @@ def run_trial(block_label, idx_in_block, question_data):
         if mouse.isPressedIn(button_show, buttons=[0]):
             wait_for_mouse_release()
             send_marker("BUTTON_CLICK")
+            click2_t = global_clock.getTime()
+            log_event("button_click", block_label, idx_in_block, question_data,
+                      "BUTTON_CLICK", TRIGGER_MAP["BUTTON_CLICK"], stem_on,
+                      button_click_t=f"{click2_t - stem_on:.6f}")
             debounce_after_trigger()
             break
 
@@ -554,6 +566,10 @@ def run_trial(block_label, idx_in_block, question_data):
         if keys:
             if keys[0].name=='escape': cleanup_and_quit()
             send_marker("BUTTON_CLICK")
+            click2_t = global_clock.getTime()
+            log_event("button_click", block_label, idx_in_block, question_data,
+                      "BUTTON_CLICK", TRIGGER_MAP["BUTTON_CLICK"], stem_on,
+                      button_click_t=f"{click2_t - stem_on:.6f}")
             debounce_after_trigger()
             break
 
@@ -632,7 +648,20 @@ def run_block(block_label, questions_in_block):
 # ===== main =====
 log_event("experiment", "START", -1, {}, "EXP_START", 0, None,
           note=f"Experiment started at {time.strftime('%Y-%m-%d %H:%M:%S')}")
-show_message("Welcome!\n\nPress SPACE to begin.")
+show_message(
+    "Welcome!\n\n"
+    "You will complete 10 blocks.\n\n"
+    "Each block has 3 questions and lasts 7 minutes.\n\n"
+    "• If you finish the 3 questions before 7 minutes, a REST screen will appear and you’ll wait until the block ends.\n\n"
+    "• If you are still answering when the 7 minutes end, the experiment immediately moves to the next block.\n\n"
+    "Between blocks, there is a short rest period of about 20 seconds.\n\n"
+    "Press SPACE to begin."
+)
+
+# sanity marker to verify LSL is live before any tasks
+send_marker("PING")
+log_event("experiment", "PING", -1, {}, "PING", TRIGGER_MAP.get("PING", 0), None,
+          note="Post-welcome ping")
 
 if RUN_QUESTIONNAIRE_BEFORE:
     run_questionnaire(block_label="PRE")
