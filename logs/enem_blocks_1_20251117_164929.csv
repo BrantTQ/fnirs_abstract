@@ -1,0 +1,32 @@
+t_abs,phase,block,trial_idx_in_block,question_number,question_year,question_type,question_field,marker_name,marker_code,rt_from_phase,choice,correct,button_click_time,option_view_time,note
+9.580356,experiment,START,-1,,,,,EXP_START,0,,,,,,Experiment started at 2025-11-17 16:49:29
+13.215380,experiment,PING,-1,,,,,PING,0,,,,,,Post-welcome ping
+13.224580,questionnaire,PRE,-1,,,QNR,start,QUESTIONNAIRE_ON,71,,,,,,Questionnaire start
+18.749495,questionnaire_item,PRE,-1,age,,QNR,Age (in years):,QNR_ITEM,0,,777,,,,qid=age; type=number; required=True
+20.768757,questionnaire_item,PRE,-1,country_of_birth,,QNR,"Country of birth (write in plain text, no commas):",QNR_ITEM,0,,vk,,,,qid=country_of_birth; type=text; required=True
+22.370439,questionnaire_item,PRE,-1,nationality,,QNR,"Nationality (write in plain text, no commas):",QNR_ITEM,0,,vk,,,,qid=nationality; type=text; required=True
+24.771359,questionnaire_item,PRE,-1,years_in_luxembourg,,QNR,Years living in Luxembourg (enter a number; use 0 if not living in LU):,QNR_ITEM,0,,4,,,,qid=years_in_luxembourg; type=number; required=True
+27.674346,questionnaire_item,PRE,-1,gender,,QNR,Gender (write 'male' or 'female'):,QNR_ITEM,0,,male,,,,qid=gender; type=text; required=True
+30.695293,questionnaire_item,PRE,-1,first_language,,QNR,First language (mother tongue) — write in plain text:,QNR_ITEM,0,,kjcxj,,,,qid=first_language; type=text; required=True
+31.862485,questionnaire_item,PRE,-1,other_languages,,QNR,Other languages you are comfortable using — write in plain text:,QNR_ITEM,0,,knfkl,,,,qid=other_languages; type=text; required=False
+33.098226,questionnaire_item,PRE,-1,affiliation,,QNR,"Current affiliation (e.g., Bachelor student, Master student, PhD candidate, university employee):",QNR_ITEM,0,,klxfnl,,,,qid=affiliation; type=text; required=True
+34.798125,questionnaire_item,PRE,-1,department_unit,,QNR,Department or Unit:,QNR_ITEM,0,,ndklfxn,,,,qid=department_unit; type=text; required=True
+36.066654,questionnaire_item,PRE,-1,highest_degree,,QNR,"Highest degree completed (e.g., Upper-secondary, Bachelor, Master, Doctorate):",QNR_ITEM,0,,dfnxln,,,,qid=highest_degree; type=text; required=True
+37.201235,questionnaire_item,PRE,-1,degree_field,,QNR,"Field of highest degree (e.g., Computer Science, Economics):",QNR_ITEM,0,,dflnkl,,,,qid=degree_field; type=text; required=True
+38.386000,questionnaire_item,PRE,-1,country_secondary_ed,,QNR,Country where you completed most of your secondary education:,QNR_ITEM,0,,xdflnlk,,,,qid=country_secondary_ed; type=text; required=True
+39.369182,questionnaire_item,PRE,-1,primary_school_langs,,QNR,Primary schooling language(s) — write in plain text as a sentence (no commas):,QNR_ITEM,0,,dfxlnl,,,,qid=primary_school_langs; type=text; required=True
+40.404573,questionnaire_item,PRE,-1,parent_a_edu,,QNR,Parent/Guardian A — highest education:,QNR_ITEM,0,,xdlfnl,,,,qid=parent_a_edu; type=text; required=True
+41.338629,questionnaire_item,PRE,-1,parent_b_edu,,QNR,Parent/Guardian B — highest education:,QNR_ITEM,0,,dxflmnl,,,,qid=parent_b_edu; type=text; required=True
+42.490053,questionnaire_item,PRE,-1,first_gen_he,,QNR,"Are you first-generation in higher education? (answer in plain text, e.g., Yes / No / Don’t know):",QNR_ITEM,0,,xlnlk,,,,qid=first_gen_he; type=text; required=True
+43.807173,questionnaire_item,PRE,-1,living_arrangement,,QNR,Current living arrangement:,QNR_ITEM,0,,xmnl,,,,qid=living_arrangement; type=text; required=False
+43.808399,questionnaire,PRE,-1,,,QNR,end,QUESTIONNAIRE_OFF,72,,,,,,Questionnaire end
+45.011112,block_start,C1,-1,,,,,BLK_ON,91,,,,,,C1 start (target 420s)
+48.863898,iti,C1,1,68,2017,concrete,CH,ITI,99,3.852576400153339,,,,,ITI duration: 3.83s
+48.900289,q_text_on,C1,1,68,2017,concrete,CH,Q_TEXT_ON,11,2.740020863711834e-05,,,,,
+52.458240,button_click,C1,1,68,2017,concrete,CH,BUTTON_CLICK,13,3.557978400029242,,,3.557965,,
+52.583112,q_stem_on,C1,1,68,2017,concrete,CH,Q_STEM_ON,14,2.71000899374485e-05,,,,,
+53.843164,button_click,C1,1,68,2017,concrete,CH,BUTTON_CLICK,13,1.260079100029543,,,1.260069,,
+53.992557,q_options_on,C1,1,68,2017,concrete,CH,Q_OPTIONS_ON,15,2.6700086891651154e-05,,,,,
+55.878969,answer,C1,1,68,2017,concrete,CH,ANS_A,21,1.8864384000189602,A,,,1.886428,
+59.683588,iti,C1,2,70,2020,concrete,CH,ITI,99,3.296389800030738,,,,,ITI duration: 3.28s
+59.698185,q_text_on,C1,2,70,2020,concrete,CH,Q_TEXT_ON,11,2.559996210038662e-05,,,,,

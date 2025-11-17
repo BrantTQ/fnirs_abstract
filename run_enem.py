@@ -14,7 +14,6 @@ import re
 
 logging.console.setLevel(logging.ERROR)
 
-
 PUNCT_KEYMAP = {
     "comma": ",", "period": ".", "minus": "-", "slash": "/",
     "backslash": "\\", "apostrophe": "'", "quote": "\"",
@@ -33,18 +32,26 @@ os.makedirs(LOG_DIR, exist_ok=True)
 USE_FNIRS = True
 USE_LSL = True
 USE_TTL = False
-LSL_STREAM_NAME = "Triggers"
+LSL_STREAM_NAME = "Trigger"        # corrected name
 LSL_STREAM_TYPE = "Markers"
 PARALLEL_PORT_ADDR = 0x0378
 
 TRIGGER_MAP = {
+    # session / utility
+    "EXP_START": 1,
+    "EXP_END": 2,
+    "PING": 3,
+
+    # task flow
     "Q_TEXT_ON": 11,
     "Q_FULL_ON": 12,     # kept for compatibility (unused here)
     "BUTTON_CLICK": 13,
     "Q_STEM_ON": 14,     # question (stem) is shown
     "Q_OPTIONS_ON": 15,  # options are shown
     "ANS_A": 21, "ANS_B": 22, "ANS_C": 23, "ANS_D": 24, "ANS_E": 25,
-    "BLK_ON": 91, "BLK_OFF": 92, "ITI": 99, "BLOCK_REST": 93,
+    "BLK_ON": 91, "BLK_OFF": 92, "BLOCK_REST": 93, "ITI": 99,
+
+    # questionnaire
     "QUESTIONNAIRE_ON": 71, "QUESTIONNAIRE_OFF": 72,
 }
 
@@ -150,12 +157,13 @@ if USE_FNIRS:
     if USE_LSL:
         try:
             from pylsl import StreamInfo, StreamOutlet
-            info = StreamInfo(LSL_STREAM_NAME, LSL_STREAM_TYPE, 1, 0, 'string',
+            # int32 numeric markers
+            info = StreamInfo(LSL_STREAM_NAME, LSL_STREAM_TYPE, 1, 0, 'int32',
                               f'psychopy_{int(time.time())}')
             outlet = StreamOutlet(info)
             print("[LSL] Marker stream created.")
-            # Send a startup marker immediately so you can see it in Aurora/Inspector
-            outlet.push_sample(["INIT"])
+            # numeric startup sample (no-op)
+            outlet.push_sample([0])
         except Exception as e:
             print("[LSL] ERROR:", e); USE_LSL = False
     if USE_TTL:
@@ -167,14 +175,14 @@ if USE_FNIRS:
             print("[TTL] ERROR:", e); USE_TTL = False
 
 def send_marker(code_name: str):
-    """Send a marker label over LSL and/or TTL; return (name, int_code, local_time_for_logs)."""
+    """Send a numeric marker over LSL and/or TTL; return (name, int_code, local_time_for_logs)."""
     t = global_clock.getTime()
     code_int = TRIGGER_MAP.get(code_name, 0)
 
-    # LSL: let LSL timestamp the sample (avoid mixing timebases)
+    # LSL: push integer codes (let LSL timestamp internally)
     if USE_FNIRS and USE_LSL:
         try:
-            outlet.push_sample([code_name])  # no timestamp arg → LSL timestamps internally
+            outlet.push_sample([code_int])
         except Exception as e:
             print("[LSL] send error:", e)
 
@@ -324,7 +332,6 @@ def should_show_question(q, answers):
         return True  # if regex invalid, fail open
 
 # ===== questionnaire =====
-
 def text_input_loop(prompt_text, required=True, numeric_only=False):
     """
     Simple text input field with CAPS LOCK + Shift support and punctuation.
@@ -396,7 +403,6 @@ def text_input_loop(prompt_text, required=True, numeric_only=False):
                 shift_next = False  # consume shift
 
             # ignore other control keys
-
 
 def run_questionnaire(block_label="QNR"):
     socio_questions = load_socio_questions(SOCIO_Q_FILE)
@@ -646,8 +652,11 @@ def run_block(block_label, questions_in_block):
               note=f"{block_label} end (actual {block_clock.getTime():.1f}s)")
 
 # ===== main =====
-log_event("experiment", "START", -1, {}, "EXP_START", 0, None,
+# EXP_START: send first, then log (tighter alignment)
+mname, mcode, _ = send_marker("EXP_START")
+log_event("experiment", "START", -1, {}, mname, mcode, None,
           note=f"Experiment started at {time.strftime('%Y-%m-%d %H:%M:%S')}")
+
 show_message(
     "Welcome!\n\n"
     "You will complete 10 blocks.\n\n"
@@ -658,9 +667,9 @@ show_message(
     "Press SPACE to begin."
 )
 
-# sanity marker to verify LSL is live before any tasks
-send_marker("PING")
-log_event("experiment", "PING", -1, {}, "PING", TRIGGER_MAP.get("PING", 0), None,
+# sanity ping: send first, then log (and use the actual PING code)
+mname, mcode, _ = send_marker("PING")
+log_event("experiment", "PING", -1, {}, mname, mcode, None,
           note="Post-welcome ping")
 
 if RUN_QUESTIONNAIRE_BEFORE:
@@ -675,7 +684,10 @@ for type_tag, within_idx, questions in plan:
     show_message(f"BLOCK {block_label}\n\nPress SPACE to continue.")
     run_block(block_label, questions)
 
-log_event("experiment", "END", -1, {}, "EXP_END", 0, None,
+# EXP_END: send first, then log (tighter alignment)
+mname, mcode, _ = send_marker("EXP_END")
+log_event("experiment", "END", -1, {}, mname, mcode, None,
           note=f"Experiment ended at {time.strftime('%Y-%m-%d %H:%M:%S')}")
+
 show_message("Thank you for participating!\n\nPress SPACE to finish.")
 cleanup_and_quit()

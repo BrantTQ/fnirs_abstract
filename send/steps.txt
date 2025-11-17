@@ -1,6 +1,8 @@
 # Create a plain-text SOP file for the assistant, LSL-only (no TTL section)
 content = """fNIRS ENEM Task — Setup & Run Guide (Assistants)
 
+MAKE SURE THAT ALL THESE FILES ARE TOGETHER IN THE SAME FOLDER
+
 1) Get the files
 Source folder: S:\\Echange\\thiago\\material
 Copy these three files to your working folder (e.g., C:\\Projects\\FNIRS\\psychopy\\):

@@ -1,0 +1,4 @@
+t_abs,phase,block,trial_idx_in_block,question_number,question_year,question_type,question_field,marker_name,marker_code,rt_from_phase,choice,correct,button_click_time,option_view_time,note
+16.995196,experiment,START,-1,,,,,EXP_START,1,,,,,,Experiment started at 2025-11-17 17:18:33
+18.404744,experiment,PING,-1,,,,,PING,3,,,,,,Post-welcome ping
+18.413267,questionnaire,PRE,-1,,,QNR,start,QUESTIONNAIRE_ON,71,,,,,,Questionnaire start
